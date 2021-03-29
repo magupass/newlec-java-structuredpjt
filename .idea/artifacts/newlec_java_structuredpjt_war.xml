@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="newlec-java-structuredpjt:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>newlec-java-structuredpjt</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="newlec-java-structuredpjt-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="newlec-java-structuredpjt:war exploded" />
+    </root>
+  </artifact>
+</component>
