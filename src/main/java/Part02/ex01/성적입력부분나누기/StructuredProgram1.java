@@ -2,11 +2,32 @@ package Part02.ex01.성적입력부분나누기;
 
 import java.util.Scanner;
 
-// 성적분리전 원본
-public class StructuredProgram {
-    public static void main(String[] args) {
+// 성적입력 score_input 분리
+public class StructuredProgram1 {
 
-        int[] kors = new int[3];
+    static int[] kors = new int[3];
+
+    static void score_input(){
+        System.out.println("┌───────────────────────────┐");
+        System.out.println("│           성적  입력        │");
+        System.out.println("└───────────────────────────┘");
+        System.out.println();
+        Scanner scan = new Scanner(System.in);
+
+        for(int i=0; i<3; i++)
+            do {
+                System.out.printf("국어%d : ", i+1);
+                kors[i] = scan.nextInt();
+
+                if(kors[i] < 0 || 100 < kors[i])
+                    System.out.println("국어성적은 0~100까지의 범위만 입력이 가능합니다.");
+
+            }while(kors[i] < 0 || 100 < kors[i]);
+
+        System.out.println("─────────────────────────────");
+    }
+
+    public static void main(String[] args) {
 
         int total = 0;
         float avg;
@@ -29,22 +50,7 @@ public class StructuredProgram {
             switch(menu) {
                 case 1:
 
-                    System.out.println("┌───────────────────────────┐");
-                    System.out.println("│           성적  입력        │");
-                    System.out.println("└───────────────────────────┘");
-                    System.out.println();
-
-                    for(int i=0; i<3; i++)
-                        do {
-                            System.out.printf("국어%d : ", i+1);
-                            kors[i] = scan.nextInt();
-
-                            if(kors[i] < 0 || 100 < kors[i])
-                                System.out.println("국어성적은 0~100까지의 범위만 입력이 가능합니다.");
-
-                        }while(kors[i] < 0 || 100 < kors[i]);
-
-                    System.out.println("─────────────────────────────");
+                    score_input();
 
                     break;
                 case 2:
