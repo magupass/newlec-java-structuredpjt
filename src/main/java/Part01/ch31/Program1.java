@@ -24,7 +24,7 @@ public class Program1 {
             System.out.println("\t1.성적입력:");
             System.out.println("\t2.성적출력:");
             System.out.println("\t3.종료:");
-            System.out.print("\t>");
+            System.out.print("\t> ");
             menu = scan.nextInt();
 
             if(menu==1){
