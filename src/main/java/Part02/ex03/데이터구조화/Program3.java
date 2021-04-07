@@ -1,13 +1,15 @@
 package Part02.ex03.데이터구조화;
 
+import Part02.ch13.ExamList13;
+
 import java.util.Scanner;
 
 //13장 가변 길이 배열 구현하기
 public class Program3 {
     public static void main(String[] args) {
-        ExamList list = new ExamList();
-        list.exams = new Exam[3];
-        list.current = 0;
+        ExamList13 list = new ExamList13();
+//        list.exams = new Exam[3];
+//        list.current = 0;
 
         int menu;
         boolean keepLoop = true;
@@ -31,43 +33,43 @@ public class Program3 {
         }
     }
 
-    private static void printList(ExamList list) {
+    private static void printList(ExamList13 list) {
         System.out.println("┌───────────────────────────┐");
         System.out.println("│           성적  출력        │");
         System.out.println("└───────────────────────────┘");
         System.out.println();
 
-        int size = list.current;
-        Exam[] exams = list.exams;
-
-        for (int i = 0; i < size; i++){
-            Exam exam = exams[i];
-            int kor = exam.kor;
-            int eng = exam.eng;
-            int math = exam.math;
-
-            int total = kor + eng + math;
-            float avg = total / 3.0f;
-
-            System.out.printf("국어 : %d\n", kor);
-            System.out.printf("영어 : %d\n", eng);
-            System.out.printf("수학 : %d\n", math);
-
-            System.out.printf("총점 : %3d\n", total);
-            System.out.printf("평균 : %6.2f\n", avg);
-            System.out.println("─────────────────────────────");
-        }
+//        int size = list.current;
+//        Exam[] exams = list.exams;
+//
+//        for (int i = 0; i < size; i++){
+//            Exam exam = exams[i];
+//            int kor = exam.kor;
+//            int eng = exam.eng;
+//            int math = exam.math;
+//
+//            int total = kor + eng + math;
+//            float avg = total / 3.0f;
+//
+//            System.out.printf("국어 : %d\n", kor);
+//            System.out.printf("영어 : %d\n", eng);
+//            System.out.printf("수학 : %d\n", math);
+//
+//            System.out.printf("총점 : %3d\n", total);
+//            System.out.printf("평균 : %6.2f\n", avg);
+//            System.out.println("─────────────────────────────");
+//        }
 
     }
 
-    private static void inputList(ExamList list) {
+    private static void inputList(ExamList13 list) {
         Scanner scan = new Scanner(System.in);
         System.out.println("┌───────────────────────────┐");
         System.out.println("│           성적  입력        │");
         System.out.println("└───────────────────────────┘");
         System.out.println();
 
-            int kor, eng, math ;
+            /*int kor, eng, math ;
 
             do {
                 System.out.printf("국어 : ");
@@ -114,7 +116,7 @@ public class Program3 {
             }
 
             list.exams[list.current] = exam;
-            list.current++;
+            list.current++;*/
 
     }
 

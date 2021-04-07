@@ -1,4 +1,4 @@
-package Part02.ex03.데이터구조화;
+package Part02.ch14;
 
 public class ExamList {
     Exam[] exams;

@@ -1,18 +1,22 @@
-package Part02.ex03.데이터구조화;
+package Part02.ch13;
 
-//12장 가변 길이를 위한 구조체 생성
-public class Program2 {
+import java.util.Scanner;
+
+public class ListProgram {
     public static void main(String[] args) {
-    /*    ExamList list = new ExamList();
-        list.exams = new Exam[3];
+        ExamList13 list = new ExamList13();
+        list.exams = new Exam13[3];
         list.current = 0;
+
 
         int menu;
         boolean keepLoop = true;
 
-        while(keepLoop) {
+        while(keepLoop)
+        {
             menu = inputMenu();
-            switch (menu) {
+
+            switch(menu) {
                 case 1:
                     inputList(list);
                     break;
@@ -21,25 +25,47 @@ public class Program2 {
                     break;
                 case 3:
                     System.out.println("Bye~~");
+
                     keepLoop = false;
                     break;
                 default:
                     System.out.println("잘못된 값을 입력하셨습니다. 메뉴는 1~3까지입니다.");
             }
-        }*/
+        }
+
     }
 
-  /*  private static void printList(ExamList list) {
+    static int inputMenu(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("┌───────────────────────────┐");
+        System.out.println("│           메인 메뉴         │");
+        System.out.println("└───────────────────────────┘");
+        System.out.println("\t1. 성적입력 ");
+        System.out.println("\t2. 성적출력 ");
+        System.out.println("\t3. 종료 ");
+        System.out.println("\t선택>");
+        int menu = scan.nextInt();
+        return menu;
+    }
+
+    private static void printList(ExamList13 list) {
         System.out.println("┌───────────────────────────┐");
         System.out.println("│           성적  출력        │");
         System.out.println("└───────────────────────────┘");
         System.out.println();
 
         int size = list.current;
-        Exam[] exams = list.exams;
+        Exam13[] exams = list.exams;
 
-        for (int i = 0; i < size; i++){
-            Exam exam = exams[i];
+        for (int i = 0; i < size; i++) {
+
+            Exam13 exam = exams[i];
+
+            if (exam == null){
+                System.out.println("입력한 값이 없습니다. 성적을 입력하세요");
+                return;
+            }
+
             int kor = exam.kor;
             int eng = exam.eng;
             int math = exam.math;
@@ -55,70 +81,75 @@ public class Program2 {
             System.out.printf("평균 : %6.2f\n", avg);
             System.out.println("─────────────────────────────");
         }
-
     }
 
-    private static void inputList(ExamList list) {
+    private static void inputList(ExamList13 list) {
         Scanner scan = new Scanner(System.in);
         System.out.println("┌───────────────────────────┐");
         System.out.println("│           성적  입력        │");
         System.out.println("└───────────────────────────┘");
         System.out.println();
 
-            int kor, eng, math ;
+
+
+            int kor,eng,math;
 
             do {
-                System.out.printf("국어 : ");
+                System.out.printf("국어:");
                 kor = scan.nextInt();
 
                 if(kor < 0 || 100 < kor)
                     System.out.println("국어성적은 0~100까지의 범위만 입력이 가능합니다.");
-
             }while(kor < 0 || 100 < kor);
+
             do {
-                System.out.printf("영어 : ");
+                System.out.printf("영어:");
                 eng = scan.nextInt();
 
                 if(eng < 0 || 100 < eng)
                     System.out.println("영어성적은 0~100까지의 범위만 입력이 가능합니다.");
-
             }while(eng < 0 || 100 < eng);
+
             do {
-                System.out.printf("수학 : ");
+                System.out.printf("수학:");
                 math = scan.nextInt();
 
                 if(math < 0 || 100 < math)
                     System.out.println("수학성적은 0~100까지의 범위만 입력이 가능합니다.");
-
             }while(math < 0 || 100 < math);
 
-            Exam exam = new Exam();
+            Exam13 exam = new Exam13();
             exam.kor = kor;
             exam.eng = eng;
             exam.math = math;
 
-//            if(!exams의 공간이 있는지){
-//                공간을 늘려주기
-//            }
+            Exam13[] exams = list.exams;
+            int size = list.current;
+
+            //exams의 추가입력 가능한 공간이 없을 경우 배열의 크기 증가
+            //1.amount개 확장한 새로운 배열 temp를 생성
+            //2. list에 있는 데이터를 temp배열로 이동
+            //3. temp가 참조하는 객체를 list가 참조하도록 변경
+            //4. 현재 capacity의 값을 +10증가 조치
+            //if(list.exams.length == list.current)
+            //System.out.println("list.exams.length: " + list.exams.length);
+            //System.out.println("list.current: " + list.current);
+
+            if (exams.length == size){
+                //1. 크기가 더 큰 새로운 배열 생성
+                Exam13[] temp = new Exam13[size + 5];
+                //2. 값의 이동
+                for (int i = 0; i < size ; i++){
+                    temp[i] = exams[i];
+                }
+                //3. list.exams가 새로만든 temp배열을 참조하도록 조정
+                list.exams = temp;
+            }
 
             list.exams[list.current] = exam;
             list.current++;
 
     }
 
-    //메뉴입력
-    static int inputMenu(){
-        Scanner scan = new Scanner(System.in);
-        System.out.println("┌───────────────────────────┐");
-        System.out.println("│           메인 메뉴         │");
-        System.out.println("└───────────────────────────┘");
-        System.out.println("\t1. 성적입력 ");
-        System.out.println("\t2. 성적출력 ");
-        System.out.println("\t3. 종료 ");
-        System.out.println("\t선택> ");
-        int menu = scan.nextInt();
-
-        return menu;
-    }*/
 
 }

@@ -1,11 +1,9 @@
 package Part02.ex03.데이터구조화;
 
-import java.util.Scanner;
-
 //10장 구조체 배열 이용하기
 public class Program {
     public static void main(String[] args) {
-        Exam[] exams = new Exam[3];
+       /* Exam[] exams = new Exam[3];
 
         int menu;
         boolean keepLoop = true;
@@ -26,10 +24,10 @@ public class Program {
                 default:
                     System.out.println("잘못된 값을 입력하셨습니다. 메뉴는 1~3까지입니다.");
             }
-        }
+        }*/
     }
 
-    private static void printList(Exam[] exams) {
+    /*private static void printList(Exam[] exams) {
         System.out.println("┌───────────────────────────┐");
         System.out.println("│           성적  출력        │");
         System.out.println("└───────────────────────────┘");
@@ -113,6 +111,6 @@ public class Program {
         int menu = scan.nextInt();
 
         return menu;
-    }
+    }*/
 
 }

@@ -1,11 +1,9 @@
 package Part02.ex03.데이터구조화;
 
-import java.util.Scanner;
-
 //14장 함수 오버로딩
 public class Program4 {
     public static void main(String[] args) {
-        ExamList list = new ExamList();
+      /*  ExamList list = new ExamList();
         list.exams = new Exam[3];
         list.current = 0;
 
@@ -28,10 +26,10 @@ public class Program4 {
                 default:
                     System.out.println("잘못된 값을 입력하셨습니다. 메뉴는 1~3까지입니다.");
             }
-        }
+        }*/
     }
 
-    private static void printList(ExamList list) {
+   /* private static void printList(ExamList list) {
         printList(list, list.current);
     }
 
@@ -160,5 +158,5 @@ public class Program4 {
         int menu = scan.nextInt();
 
         return menu;
-    }
+    }*/
 }
