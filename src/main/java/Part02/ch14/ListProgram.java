@@ -5,8 +5,8 @@ import java.util.Scanner;
 //함수 오버로딩
 public class ListProgram {
     public static void main(String[] args) {
-        ExamList list = new ExamList();
-        list.exams = new Exam[3];
+        ExamList14 list = new ExamList14();
+        list.exams = new Exam14[3];
         list.current = 0;
 
 
@@ -49,22 +49,22 @@ public class ListProgram {
         return menu;
     }
 
-    private static void printList(ExamList list) {
+    private static void printList(ExamList14 list) {
         printList(list, list.current,0);
     }
 
-    private static void printList(ExamList list, int size) {
+    private static void printList(ExamList14 list, int size) {
         printList(list, size,0);
     }
 
-    private static void printList(ExamList list, int size,int start) {
+    private static void printList(ExamList14 list, int size, int start) {
         System.out.println("┌───────────────────────────┐");
         System.out.println("│           성적  출력        │");
         System.out.println("└───────────────────────────┘");
         System.out.println();
 
         //int size = list.current;
-        Exam[] exams = list.exams;
+        Exam14[] exams = list.exams;
 
         for (int i = 0; i < size+start; i++) {
 
@@ -74,7 +74,7 @@ public class ListProgram {
 //            }
 
             if(i>=start){
-                Exam exam = exams[i];
+                Exam14 exam = exams[i];
 
                 int kor = exam.kor;
                 int eng = exam.eng;
@@ -95,7 +95,7 @@ public class ListProgram {
         }
     }
 
-    private static void inputList(ExamList list) {
+    private static void inputList(ExamList14 list) {
         Scanner scan = new Scanner(System.in);
         System.out.println("┌───────────────────────────┐");
         System.out.println("│           성적  입력        │");
@@ -130,12 +130,12 @@ public class ListProgram {
                     System.out.println("수학성적은 0~100까지의 범위만 입력이 가능합니다.");
             }while(math < 0 || 100 < math);
 
-            Exam exam = new Exam();
+            Exam14 exam = new Exam14();
             exam.kor = kor;
             exam.eng = eng;
             exam.math = math;
 
-            Exam[] exams = list.exams;
+            Exam14[] exams = list.exams;
             int size = list.current;
 
             //exams의 추가입력 가능한 공간이 없을 경우 배열의 크기 증가
@@ -149,7 +149,7 @@ public class ListProgram {
 
             if (exams.length == size){
                 //1. 크기가 더 큰 새로운 배열 생성
-                Exam[] temp = new Exam[size + 5];
+                Exam14[] temp = new Exam14[size + 5];
                 //2. 값의 이동
                 for (int i = 0; i < size ; i++){
                     temp[i] = exams[i];

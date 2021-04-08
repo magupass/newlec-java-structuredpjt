@@ -1,4 +1,4 @@
-package Part02.ch14;
+package Part03.ch04;
 
 public class Exam {
     int kor;
