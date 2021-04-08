@@ -1,14 +1,11 @@
-package Part03.ch04;
+package Part03.ch07;
 
 import java.util.Scanner;
 
-//인스턴스 메소드 구현
+//캡슐의 은닉성과 접근 지정자
 public class Program {
     public static void main(String[] args) {
         ExamList list = new ExamList();
-
-        list.init();
-
 
         int menu;
         boolean keepLoop = true;

@@ -1,14 +1,11 @@
-package Part03.ch04;
+package Part03.ch08;
 
 import java.util.Scanner;
 
-//인스턴스 메소드 구현
+//Getters와 Setters
 public class Program {
     public static void main(String[] args) {
         ExamList list = new ExamList();
-
-        list.init();
-
 
         int menu;
         boolean keepLoop = true;
