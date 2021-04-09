@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/abs/abs.iml" filepath="$PROJECT_DIR$/abs/abs.iml" />
       <module fileurl="file://$PROJECT_DIR$/newlec-java-structuredpjt.iml" filepath="$PROJECT_DIR$/newlec-java-structuredpjt.iml" />
     </modules>
   </component>
